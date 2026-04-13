@@ -10,6 +10,9 @@ import bibliotecaImage from '../assets/imagenes/projects/Biblioteca_UEA.jpg';
 import sakuraImage from '../assets/imagenes/projects/sakuralab.jpg';
 import saaImage from '../assets/imagenes/projects/saa.jpg';
 import tutoriaImage from '../assets/imagenes/projects/tutoria.jpg';
+import ecojuegoImage from '../assets/imagenes/projects/ecojuego.png';
+import algoritmoImage from '../assets/imagenes/projects/simulador.jpg';
+
 
 interface Project {
 	title: string;
@@ -59,7 +62,7 @@ const projects: Project[] = [
 		imageUrl: saaImage,
 		imageAlt: 'Portada de S.A.A',
 		githubUrl: 'https://github.com/DavidParragaMendoza/SAA',
-		demoUrl: 'https://sakura-lab.vercel.app/',
+		demoUrl: 'https://proyecto1.ueancon.com/',
 	},
 
 
@@ -100,6 +103,30 @@ const projects: Project[] = [
 		imageAlt: 'Interfaz de la biblioteca digital de la Unidad Educativa Ancón.',
 		githubUrl: "https://github.com/DavidParragaMendoza/biblioteca.ueancon.com",
 		demoUrl: 'http://biblioteca.ueancon.com/',
+	},
+
+	{
+		title: "EcoJuego",
+		subtitle: "Videojuego Educativo sobre Especies en Peligro de Extinción",
+		description: "EcoJuego es un proyecto interactivo desarrollado en C++ que combina el estilo arcade con la educación ambiental. Su propósito es concientizar a los jugadores sobre la conservación del medio ambiente y la protección de especies amenazadas por la deforestación, la caza furtiva y la contaminación. Incluye una campaña de 10 niveles, sistema de vidas, controles simples y un enfoque educativo que desbloquea historias reales de especies en peligro conforme se avanza en el juego. El sistema está diseñado con arquitectura MVC y cuenta con módulos de administrador y jugador para gestionar especies, historias, niveles y usuarios.",
+		stack: ["C++", "Visual Studio 2022", "Windows Forms (.NET Framework)", "MySQL", "MySQL Connector/C++", "MVC"],
+		stackTone: 'text-primary-fixed',
+		imageUrl: ecojuegoImage,
+		imageAlt: 'Portada del videojuego EcoJuego, mostrando una escena de un ecosistema en peligro.',
+		githubUrl: "https://github.com/DavidParragaMendoza/ecojuego",
+		demoUrl: 'https://youtube.com/live/L5Nd4MCnyHA',
+	},
+
+	{
+		title: "Algoritmo de Planificación",
+		subtitle: "Herramienta Didáctica para Sistemas Operativos",
+		description: "Este proyecto es una aplicación educativa desarrollada en C++ que permite simular y visualizar el comportamiento de algoritmos de planificación de procesos de la CPU. Fue creado como recurso didáctico para la asignatura de Sistemas Operativos en la Universidad Estatal Península de Santa Elena (UPSE). La herramienta ofrece una interfaz gráfica interactiva para comprender mejor conceptos como la gestión de procesos y la asignación de CPU.",
+		stack: ["C++", "Visual Studio 2022", "WinForms con CLR", "MVC"],
+		stackTone: 'text-primary-fixed',
+		imageUrl: algoritmoImage,
+		imageAlt: 'Portada del simulador de algoritmos de planificación.',
+		githubUrl: "https://github.com/DavidParragaMendoza/algoritmo-de-planificacion",
+		demoUrl: 'https://youtube.com/live/T6jh1aUUwZ0',
 	},
 		
 ];
@@ -163,7 +190,7 @@ const projects: Project[] = [
 								<a
 									href={project.githubUrl}
 									class="flex items-center gap-2 text-sm font-medium text-primary transition-all hover:brightness-125"
-									aria-label={`Repositorio de ${project.title}`}
+									aria-label={`Repositorio de ${project.title}`} target="_blank"
 								>
 									<i class="fas fa-code text-sm" aria-hidden="true"></i>
 									GitHub

@@ -1,0 +1,129 @@
+---
+import { Image } from 'astro:assets';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
+import curso1Image from '../assets/imagenes/cursos/curso1.jpg';
+import curso2Image from '../assets/imagenes/cursos/curso2.jpg';
+import curso3Image from '../assets/imagenes/cursos/curso3.jpg';
+
+interface Certificate {
+	title: string;
+	date: string;
+	institution: string;
+	verificationUrl: string;
+	imageUrl: ImageMetadata;
+	imageAlt: string;
+}
+
+const certificates: Certificate[] = [
+	{
+		title: 'Introducción al Desarrollo de Software',
+		date: '22 de julio 2025',
+		institution: 'Coursera - Pontificia Universidad Católica del Perú',
+		verificationUrl: 'https://www.coursera.org/account/accomplishments/verify/YQK7R3RTJA9T',
+		imageUrl: curso1Image,
+		imageAlt: 'Certificado del curso 1.',
+	},
+	{
+		title: 'Fundamentos de UX y Requisitos de Software',
+		date: '5 de junio 2025',
+		institution: 'Coursera - Pontificia Universidad Católica del Perú',
+		verificationUrl: 'https://www.coursera.org/account/accomplishments/verify/U3V99GW000L1',
+		imageUrl: curso2Image,
+		imageAlt: 'Certificado del curso 2.',
+	},
+	{
+		title: 'Programming for Everybody (Getting Started with Python)',
+		date: '15 de marzo 2026',
+		institution: 'Coursera - University of Michigan',
+		verificationUrl: 'https://www.coursera.org/account/accomplishments/verify/XZ2YJJBC6NRR',
+		imageUrl: curso3Image,
+		imageAlt: 'Certificado del curso 3.',
+	},
+];
+---
+
+<Layout
+	title="Certificados | David Parraga M."
+	description="Certificados y cursos completados con enlaces de verificación."
+>
+	<Header />
+	<main class="projects-page mx-auto max-w-7xl bg-background px-6 pb-24 pt-32 text-on-surface selection:bg-primary/30 selection:text-primary md:px-12">
+		<header class="mb-16">
+			<div class="mb-4 inline-block rounded-lg border border-outline-variant/10 bg-surface-container-high px-3 py-1">
+				<span class="font-mono text-[10px] uppercase tracking-[0.1em] text-tertiary">Certificados</span>
+			</div>
+			<h1 class="mb-6 text-5xl font-bold tracking-tighter text-on-surface md:text-7xl">
+				Mis <span class="text-primary">Certificados</span>
+			</h1>
+			
+		</header>
+
+		<section class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{
+				certificates.map((certificate, index) => (
+					<article class="group flex flex-col overflow-hidden rounded-xl bg-surface-container-low shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,31,38,0.4)]">
+						<div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+							<Image
+								src={certificate.imageUrl}
+								alt={certificate.imageAlt}
+								width={1280}
+								height={720}
+								sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+								loading={index === 0 ? 'eager' : 'lazy'}
+								fetchpriority={index === 0 ? 'high' : 'low'}
+								decoding="async"
+								class="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+						</div>
+						<div class="flex grow flex-col p-8">
+							<h2 class="mb-4 text-2xl font-bold text-on-surface transition-colors group-hover:text-primary">
+								{certificate.title}
+							</h2>
+
+							<div class="mb-6 space-y-3 text-sm text-on-surface-variant">
+								<p class="flex items-center gap-2">
+									<i class="fas fa-calendar text-xs text-primary" aria-hidden="true"></i>
+									{certificate.date}
+								</p>
+								<p class="flex items-center gap-2">
+									<i class="fas fa-building text-xs text-primary" aria-hidden="true"></i>
+									{certificate.institution}
+								</p>
+							</div>
+
+							<div class="mt-auto border-t border-outline-variant/10 pt-6">
+								<p class="mb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-on-surface-variant">
+									Link de verificación
+								</p>
+								{
+									certificate.verificationUrl ? (
+										<a
+											href={certificate.verificationUrl}
+											class="flex items-center gap-2 text-sm font-medium text-primary transition-all hover:brightness-125"
+											target="_blank"
+											rel="noreferrer"
+											aria-label={`Verificación de ${certificate.title}`}
+										>
+											<i class="fas fa-up-right-from-square text-xs" aria-hidden="true"></i>
+											Ver certificado
+										</a>
+									) : (
+										<span class="flex items-center gap-2 text-sm font-medium text-on-surface-variant">
+											<i class="fas fa-link text-xs" aria-hidden="true"></i>
+											Pega aquí tu enlace de Coursera
+										</span>
+									)
+								}
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</section>
+	</main>
+	<Footer />
+</Layout>
