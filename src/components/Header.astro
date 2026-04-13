@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/favicon.png';
+---
+
+<header>
+	<nav
+		class="fixed z-50 w-full border-b border-border-light bg-white/80 backdrop-blur-md transition-colors duration-300 dark:border-border-dark dark:bg-slate-900/80"
+	>
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+			<div class="flex h-16 items-center justify-between">
+				<a class="flex shrink-0 items-center gap-3" href="#top">
+					<Image
+						src={logo}
+						alt="DPM Logo"
+						width={40}
+						height={40}
+						class="h-10 w-10 rounded-full bg-white object-cover shadow-sm dark:bg-transparent"
+					/>
+				</a>
+				<div class="hidden items-center space-x-8 md:flex">
+					<a class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary" href="#about"
+						>Sobre Mí</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						href="#skills">Habilidades</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						href="#projects">Proyectos</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						href="#contact">Contacto</a
+					>
+				</div>
+				<div class="flex items-center gap-4">
+					
+					<div class="md:hidden">
+						<button
+							class="p-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+							aria-label="Abrir menú"
+							data-menu-toggle
+						>
+							<i class="fas fa-bars text-xl"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div
+				class="mt-2 hidden border-t border-border-light pb-4 pt-4 dark:border-border-dark md:hidden"
+				data-mobile-menu
+			>
+				<div class="flex flex-col gap-3">
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						data-mobile-link
+						href="#about">Sobre Mí</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						data-mobile-link
+						href="#skills">Habilidades</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						data-mobile-link
+						href="#projects">Proyectos</a
+					>
+					<a
+						class="text-sm font-medium transition-colors hover:text-primary dark:hover:text-primary"
+						data-mobile-link
+						href="#contact">Contacto</a
+					>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script is:inline>
+	const root = document.documentElement;
+	const themeToggle = document.querySelector('[data-theme-toggle]');
+	const menuToggle = document.querySelector('[data-menu-toggle]');
+	const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+	themeToggle?.addEventListener('click', () => {
+		const isDark = root.classList.toggle('dark');
+		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+	});
+
+	menuToggle?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+
+	document.querySelectorAll('[data-mobile-link]').forEach((link) => {
+		link.addEventListener('click', () => {
+			mobileMenu?.classList.add('hidden');
+		});
+	});
+</script>

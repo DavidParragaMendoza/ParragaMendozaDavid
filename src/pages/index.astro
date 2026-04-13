@@ -1,0 +1,459 @@
+---
+import { Image } from 'astro:assets';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import profilePhoto from '../assets/David_Parraga.jpeg';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<Header />
+	<main id="top" class="pt-16">
+		<section
+			class="relative flex flex-col items-center justify-center overflow-hidden px-4 pt-10 pb-20 text-center sm:px-6 md:pt-16 md:pb-32 lg:px-8"
+		>
+			<div
+				class="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]"
+			></div>
+			<div class="relative z-10 mx-auto max-w-4xl space-y-8">
+				<Image
+					src={profilePhoto}
+					alt="David Parraga Profile"
+					width={160}
+					height={160}
+					class="profile-image mx-auto h-32 w-32 rounded-full border-4 border-white object-cover shadow-xl dark:border-slate-800 md:h-40 md:w-40"
+				/>
+				<div class="space-y-4">
+					<p class="font-mono font-medium tracking-wide text-primary">Hola, soy</p>
+					<h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-6xl">
+						David Parraga M.
+					</h1>
+					<h2 class="mt-2 text-2xl font-semibold text-slate-600 dark:text-slate-300 md:text-3xl">
+						Desarrollador Full Stack Junior | <span class="gradient-text">IA Aplicada</span>
+					</h2>
+				</div>
+				<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+					Desarrollador con experiencia práctica en ecosistemas Backend y Front-End. Especializado en la creación de arquitecturas escalables y en la integración de modelos de IA. 
+					Creo firmemente en que una base teórica sólida es la clave para implementar soluciones de IA verdaderamente eficientes y seguras.
+				</p>
+				<div class="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row">
+					<a
+						class="w-full rounded-lg bg-primary px-8 py-3 font-medium text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-hover sm:w-auto"
+						href="#projects"
+					>
+						Ver Proyectos
+					</a>
+					<a
+						class="flex w-full items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-8 py-3 font-medium text-slate-900 transition-all hover:bg-slate-50 dark:border-border-dark dark:bg-surface-dark dark:text-white dark:hover:bg-slate-700 sm:w-auto"
+						href="https://drive.google.com/file/d/1VTC0DaJfT1q5geOQ9hodPo9Lwt1mdbk5/view?usp=sharing" target="_blank"
+					>
+						<i class="fas fa-download"></i> Descargar CV
+					</a>
+				</div>
+				<div class="flex items-center justify-center gap-6 pt-8 text-2xl text-slate-500 dark:text-slate-400">
+					<a class="transition-colors hover:text-primary dark:hover:text-primary" href="https://github.com/DavidParragaMendoza/" target="_blank"
+						><i class="fab fa-github"></i
+					></a>
+					<a class="transition-colors hover:text-primary dark:hover:text-primary" href="https://www.linkedin.com/in/davidparragamendoza/" target="_blank"
+						><i class="fab fa-linkedin"></i
+					></a>
+					<a class="transition-colors hover:text-primary dark:hover:text-primary" href="mailto:davidparragamendoza@gmail.com" target="_blank"
+						><i class="fas fa-envelope"></i
+					></a>
+				</div>
+			</div>
+		</section>
+		<section
+			id="about"
+			class="border-y border-border-light bg-surface-light py-20 transition-colors duration-300 dark:border-border-dark dark:bg-surface-dark/50"
+		>
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<h2 class="mb-12 flex items-center gap-3 text-3xl font-bold text-slate-900 dark:text-white">
+					<span class="font-mono text-xl text-primary">01.</span> Experiencia Relevante
+				</h2>
+				<div class="max-w-4xl space-y-12">
+					<div class="relative pl-8 md:pl-0">
+						<div class="items-baseline md:grid md:grid-cols-4 md:gap-8">
+							<div class="mb-2 md:col-span-1 md:mb-0">
+								<span class="text-sm font-mono text-slate-500 dark:text-slate-400"
+									>Ene 2026 - Mar 2026</span
+								>
+							</div>
+							<div class="md:col-span-3">
+								<h3 class="text-xl font-bold text-slate-900 dark:text-white">
+									Desarrollador Web Freelance
+								</h3>
+								<h4 class="mb-4 text-lg font-medium text-primary">Sakuralab</h4>
+								<ul class="mb-4 list-inside list-disc space-y-2 text-slate-600 dark:text-slate-300">
+									<li>
+										Diseñé y desarrollé desde cero el sitio web comercial de la tienda online de impresiones 3D.
+									</li>
+									<li>Logrando una interfaz moderna y optimizada para dispositivos móviles.</li>
+								</ul>
+								<div class="flex flex-wrap gap-2">
+									<span class="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-mono text-orange-600 dark:border-orange-900/50 dark:bg-orange-900/20 dark:text-orange-400">
+										HTML
+									</span>
+									<span class="rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-mono text-purple-600 dark:border-purple-900/50 dark:bg-purple-900/20 dark:text-purple-400">
+										Astro
+									</span>
+									<span class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-mono text-cyan-600 dark:border-cyan-900/50 dark:bg-cyan-900/20 dark:text-cyan-400">
+										Tailwind CSS
+									</span>
+									<span class="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-mono text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+										Obtención de requisitos
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="relative pl-8 md:pl-0">
+						<div class="items-baseline md:grid md:grid-cols-4 md:gap-8">
+							<div class="mb-2 md:col-span-1 md:mb-0">
+								<span class="text-sm font-mono text-slate-500 dark:text-slate-400">2023 - 2024</span>
+							</div>
+							<div class="md:col-span-3">
+								<h3 class="text-xl font-bold text-slate-900 dark:text-white">
+									Desarrollador Full Stack
+								</h3>
+								<h4 class="mb-4 text-lg font-medium text-primary">Unidad Educativa Ancon</h4>
+								<ul class="mb-4 list-inside list-disc space-y-2 text-slate-600 dark:text-slate-300">
+									<li>
+										<strong class="text-slate-900 dark:text-white" >Sistema de Administración de Asistencia (S.A.A.):</strong><br>
+										Desarrollé una plataforma que automatiza el control de horarios, procesando
+										registros biométricos desde Excel a la base de datos.
+									</li>
+									<li>Generé reportes automatizados en PDF/Excel para inspección.</li>
+									<li>
+										Creé la web oficial reemplazando un sistema heredado, y programé una biblioteca
+										virtual con API de Google Drive.
+									</li>
+								</ul>
+								<div class="flex flex-wrap gap-2">
+									<span class="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-mono text-indigo-600 dark:border-indigo-900/50 dark:bg-indigo-900/20 dark:text-indigo-400">
+										PHP
+									</span>
+									<span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-mono text-blue-600 dark:border-blue-900/50 dark:bg-blue-900/20 dark:text-blue-400">
+										MySQL
+									</span>
+									<span class="rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-mono text-green-600 dark:border-green-900/50 dark:bg-green-900/20 dark:text-green-400">
+										Excel
+									</span>
+									<span class="rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-mono text-yellow-600 dark:border-yellow-900/50 dark:bg-yellow-900/20 dark:text-yellow-400">
+										API de Google Drive
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="skills" class="py-20">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<h2 class="mb-12 flex items-center gap-3 text-3xl font-bold text-slate-900 dark:text-white">
+					<span class="font-mono text-xl text-primary">02.</span> Habilidades Técnicas
+				</h2>
+				<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+					<div
+						class="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm transition-shadow hover:shadow-md dark:border-border-dark dark:bg-surface-dark"
+					>
+						<div
+							class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-2xl text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
+						>
+							<i class="fas fa-server"></i>
+						</div>
+						<h3 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">Backend</h3>
+						<ul class="space-y-2 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li>Python</li>
+							<li>C++</li>
+							<li>PHP</li>
+							<li>FastAPI</li>
+						</ul>
+					</div>
+					<div
+						class="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm transition-shadow hover:shadow-md dark:border-border-dark dark:bg-surface-dark"
+					>
+						<div
+							class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100 text-2xl text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400"
+						>
+							<i class="fas fa-laptop-code"></i>
+						</div>
+						<h3 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">Frontend</h3>
+						<ul class="space-y-2 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li>JavaScript</li>
+							<li>Astro</li>
+							<li>Tailwind CSS</li>
+							<li>Angular / Ionic</li>
+						</ul>
+					</div>
+					<div
+						class="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm transition-shadow hover:shadow-md dark:border-border-dark dark:bg-surface-dark"
+					>
+						<div
+							class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-2xl text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
+						>
+							<i class="fas fa-database"></i>
+						</div>
+						<h3 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">
+							Bases &amp; Herramientas
+						</h3>
+						<ul class="space-y-2 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li>MySQL</li>
+							<li>Git / GitHub</li>
+							<li>Copilot CLI</li>
+						</ul>
+					</div>
+					<div
+						class="relative overflow-hidden rounded-2xl border border-primary/30 bg-surface-light p-6 shadow-sm transition-shadow hover:shadow-md dark:border-primary/50 dark:bg-surface-dark"
+					>
+						<div class="absolute top-0 right-0 -z-10 h-32 w-32 rounded-bl-full bg-primary/10"></div>
+						<div
+							class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-2xl text-primary"
+						>
+							<i class="fas fa-brain"></i>
+						</div>
+						<h3 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">IA Aplicada</h3>
+						<ul class="space-y-2 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li>Langchain</li>
+							<li>FAISS</li>
+							<li>Ollama</li>
+							<li>RAG / LLMs locales</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+					<div class="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+						<h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white">
+							<i class="fas fa-users text-primary"></i> Habilidades Blandas
+						</h3>
+						<ul class="list-inside list-disc space-y-2 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li>Liderazgo con iniciativa.</li>
+							<li>Aprendizaje autónomo.</li>
+							<li>Comunicación efectiva.</li>
+							<li>Oratoria.</li>
+							<li>Pensamiento Lógico y Analítico.</li>
+						</ul>
+					</div>
+					<div class="rounded-2xl border border-border-light bg-surface-light p-6 shadow-sm dark:border-border-dark dark:bg-surface-dark">
+						<h3 class="mb-4 flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white">
+							<i class="fas fa-language text-primary"></i> Idiomas
+						</h3>
+						<ul class="space-y-3 font-mono text-sm text-slate-600 dark:text-slate-400">
+							<li class="flex items-center justify-between border-b border-border-light pb-2 dark:border-border-dark">
+								<span>Español</span><span class="rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary">Nativo</span>
+							</li>
+							<li class="flex items-center justify-between border-b border-border-light pb-2 dark:border-border-dark">
+								<span>Inglés</span><span class="rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary">B1</span>
+							</li>
+							<li class="flex items-center justify-between">
+								<span>Portugués</span><span class="rounded bg-primary/10 px-2 py-1 text-xs font-medium text-primary">A1</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			id="projects"
+			class="border-y border-border-light bg-surface-light/80 py-20 dark:border-border-dark dark:bg-surface-dark/30"
+		>
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+					<h2 class="mb-0 flex items-center gap-3 text-3xl font-bold text-slate-900 dark:text-white">
+						<span class="font-mono text-xl text-primary">03.</span> Proyectos Destacados
+					</h2>
+					<a
+						class="flex items-center gap-2 rounded-lg border border-primary/30 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+						href="#"
+					>
+						Ver todos los proyectos <i class="fas fa-arrow-right text-xs"></i>
+					</a>
+				</div>
+				<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+					<div
+						class="flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-md transition-transform duration-300 hover:-translate-y-1 dark:border-border-dark dark:bg-slate-800"
+					>
+						<div class="grow p-8">
+							<div class="mb-4 flex items-start justify-between">
+								<h3 class="text-2xl font-bold text-slate-900 dark:text-white">TutorIA</h3>
+								<div class="flex gap-3 text-slate-500 dark:text-slate-400">
+									<a class="transition-colors hover:text-primary dark:hover:text-primary" href="#"
+										><i class="fab fa-github text-xl"></i
+									></a>
+									<a class="transition-colors hover:text-primary dark:hover:text-primary" href="#"
+										><i class="fas fa-external-link-alt text-xl"></i
+									></a>
+								</div>
+							</div>
+							<p class="mb-4 text-sm font-medium text-primary">Plataforma de Aprendizaje con IA</p>
+							<p class="mb-6 line-clamp-4 text-slate-600 dark:text-slate-400">
+								Prototipo funcional creado con la misión de facilitar el aprendizaje del chino
+								mandarín. Ofrece a los estudiantes una herramienta inteligente y de disponibilidad
+								continua para practicar el idioma a su propio ritmo.
+							</p>
+							<div class="mt-auto flex flex-wrap gap-2">
+								<span
+									class="rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-mono text-yellow-600 dark:border-yellow-900/50 dark:bg-yellow-900/20 dark:text-yellow-400"
+									>Python</span
+								>
+								<span
+									class="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-mono text-teal-600 dark:border-teal-900/50 dark:bg-teal-900/20 dark:text-teal-400"
+									>FastAPI</span
+								>
+								<span
+									class="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-mono text-emerald-600 dark:border-emerald-900/50 dark:bg-emerald-900/20 dark:text-emerald-400"
+									>Langchain</span
+								>
+								<span
+									class="rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-mono text-zinc-600 dark:border-zinc-900/50 dark:bg-zinc-900/20 dark:text-zinc-400"
+									>Ollama</span
+								>
+							</div>
+						</div>
+					</div>
+					<div
+						class="flex flex-col overflow-hidden rounded-2xl border border-border-light bg-white shadow-md transition-transform duration-300 hover:-translate-y-1 dark:border-border-dark dark:bg-slate-800"
+					>
+						<div class="grow p-8">
+							<div class="mb-4 flex items-start justify-between">
+								<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Simuladores C++</h3>
+								<div class="flex gap-3 text-slate-500 dark:text-slate-400">
+									<a class="transition-colors hover:text-primary dark:hover:text-primary" href="#"
+										><i class="fab fa-github text-xl"></i
+									></a>
+								</div>
+							</div>
+							<p class="mb-4 text-sm font-medium text-primary">Sistemas Operativos y Estructuras</p>
+							<p class="mb-6 line-clamp-4 text-slate-600 dark:text-slate-400">
+								Programé un simulador de planificación de procesos (SJF) y un administrador de tareas
+								(Sigesta). Desarrollé interfaces gráficas y conexiones a bases de datos aplicando
+								sólidos fundamentos de lógica algorítmica.
+							</p>
+							<div class="mt-auto flex flex-wrap gap-2">
+								<span
+									class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-mono text-blue-600 dark:border-blue-900/50 dark:bg-blue-900/20 dark:text-blue-400"
+									>C++</span
+								>
+								<span
+									class="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-3 py-1 text-xs font-mono text-fuchsia-600 dark:border-fuchsia-900/50 dark:bg-fuchsia-900/20 dark:text-fuchsia-400"
+									>GUI</span
+								>
+								<span
+									class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-mono text-cyan-600 dark:border-cyan-900/50 dark:bg-cyan-900/20 dark:text-cyan-400"
+									>SQL</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-20">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+					<div>
+						<h2 class="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
+							<i class="fas fa-graduation-cap text-primary"></i> Formación
+						</h2>
+						<div class="space-y-6">
+							<div class="relative border-l-2 border-primary pl-4">
+								<div class="absolute top-2 -left-1.75 h-3 w-3 rounded-full bg-primary"></div>
+								<h3 class="text-lg font-bold text-slate-900 dark:text-white">Ingeniería de Software</h3>
+								<p class="text-slate-600 dark:text-slate-400">
+									UPSE (Universidad Estatal Península de Santa Elena)
+								</p>
+								<p class="mt-1 text-sm font-mono text-slate-500 dark:text-slate-500">
+									2024 - Presente | 4to semestre
+								</p>
+							</div>
+							<div class="relative border-l-2 border-border-light pl-4 dark:border-border-dark">
+								<div
+									class="absolute top-2 -left-1.75 h-3 w-3 rounded-full bg-slate-300 dark:bg-slate-600"
+								></div>
+								<h3 class="text-lg font-bold text-slate-900 dark:text-white">
+									Bachiller Técnico en Informática
+								</h3>
+								<p class="text-slate-600 dark:text-slate-400">Unidad Educativa Ancon</p>
+								<p class="mt-1 text-sm font-mono text-slate-500 dark:text-slate-500">2024</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<h2 class="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white">
+							<i class="fas fa-certificate text-primary"></i> Certificaciones
+						</h2>
+						<ul class="space-y-4">
+							<li
+								class="flex items-start gap-4 rounded-lg border border-border-light bg-surface-light p-4 dark:border-border-dark dark:bg-surface-dark"
+							>
+								<div class="mt-1 text-blue-500"><i class="fab fa-coursera text-2xl"></i></div>
+								<div>
+									<h4 class="font-bold text-slate-900 dark:text-white">
+										Fundamentos de UX y Requisitos de Software
+									</h4>
+									<p class="text-sm text-slate-600 dark:text-slate-400">Coursera | 2025-2026</p>
+								</div>
+							</li>
+							<li
+								class="flex items-start gap-4 rounded-lg border border-border-light bg-surface-light p-4 dark:border-border-dark dark:bg-surface-dark"
+							>
+								<div class="mt-1 text-blue-500"><i class="fab fa-coursera text-2xl"></i></div>
+								<div>
+									<h4 class="font-bold text-slate-900 dark:text-white">Python for Everybody</h4>
+									<p class="text-sm text-slate-600 dark:text-slate-400">Coursera | 2026-Presente</p>
+								</div>
+							</li>
+							<li
+								class="flex items-start gap-4 rounded-lg border border-border-light bg-surface-light p-4 dark:border-border-dark dark:bg-surface-dark"
+							>
+								<div class="mt-1 text-slate-400"><i class="fas fa-laptop-code text-xl"></i></div>
+								<div>
+									<h4 class="font-bold text-slate-900 dark:text-white">Desarrollo de Páginas Web</h4>
+									<p class="text-sm text-slate-600 dark:text-slate-400">UPSE | 2025</p>
+								</div>
+							</li>
+						</ul>
+						<div class="mt-8 flex justify-center">
+							<button
+								class="rounded-lg border border-border-light px-6 py-2 text-sm font-medium text-slate-600 transition-all hover:border-primary/50 hover:text-primary dark:border-border-dark dark:text-slate-400"
+							>
+								Ver más certificaciones
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			id="contact"
+			class="relative overflow-hidden bg-primary/5 py-24 text-center dark:bg-primary/10"
+		>
+			<div class="relative z-10 mx-auto max-w-3xl px-4">
+				<h2 class="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
+					¿Interesado en colaborar?
+				</h2>
+				<p class="mx-auto mb-8 max-w-xl text-slate-600 dark:text-slate-400">
+					Busco generar un impacto positivo integrando tecnología para desarrollar soluciones que
+					contribuyan al progreso. Actualmente abierto a nuevas oportunidades.
+				</p>
+				<a
+					class="inline-block rounded-lg bg-primary px-8 py-4 font-bold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-1 hover:bg-primary-hover"
+					href="mailto:davidparragamendoza@gmail.com"
+				>
+					Contactar <i class="fas fa-paper-plane ml-2"></i>
+				</a>
+				<div class="mt-12 flex justify-center gap-8 text-sm font-mono text-slate-600 dark:text-slate-400">
+					<span class="flex items-center gap-2"
+						><i class="fas fa-map-marker-alt text-primary"></i> Santa Elena, Ecuador</span
+					>
+					<span class="flex items-center gap-2"
+						><i class="fas fa-phone text-primary"></i> (+593) 97 881 9912</span
+					>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
