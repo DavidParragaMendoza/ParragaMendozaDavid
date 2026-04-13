@@ -5,10 +5,21 @@
 	--color-primary-hover: #0284c7;
 	--color-background-light: #f8fafc;
 	--color-background-dark: #0f172a;
+	--color-background: #0b1326;
 	--color-surface-light: #ffffff;
 	--color-surface-dark: #1e293b;
+	--color-surface-container-low: #131b2e;
+	--color-surface-container-high: #222a3d;
+	--color-surface-container-highest: #2d3449;
 	--color-border-light: #e2e8f0;
 	--color-border-dark: #334155;
+	--color-on-surface: #dae2fd;
+	--color-on-surface-variant: #bcc9cd;
+	--color-outline-variant: #3d494c;
+	--color-tertiary: #ffb873;
+	--color-primary-fixed: #acedff;
+	--color-primary-container: #06b6d4;
+	--color-on-primary-container: #00424f;
 	--font-sans: 'Inter', sans-serif;
 	--font-mono: 'JetBrains Mono', monospace;
 	--radius: 0.5rem;
@@ -21,6 +32,22 @@
 }
 
 @layer components {
+	.projects-page {
+		--color-primary: #4cd7f6;
+		--color-primary-hover: #31c6e8;
+		--color-background: #0b1326;
+		--color-on-surface: #dae2fd;
+		--color-on-surface-variant: #bcc9cd;
+		--color-surface-container-low: #131b2e;
+		--color-surface-container-high: #222a3d;
+		--color-surface-container-highest: #2d3449;
+		--color-outline-variant: #3d494c;
+		--color-tertiary: #ffb873;
+		--color-primary-fixed: #acedff;
+		--color-primary-container: #06b6d4;
+		--color-on-primary-container: #00424f;
+	}
+
 	.gradient-text {
 		background-clip: text;
 		-webkit-background-clip: text;

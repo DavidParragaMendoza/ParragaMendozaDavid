@@ -1,0 +1,189 @@
+---
+import { Image } from 'astro:assets';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
+import pythonImage from '../assets/imagenes/projects/Python_para_todos.jpg';
+import ueaImage from '../assets/imagenes/projects/ueanco.jpg';
+import bibliotecaImage from '../assets/imagenes/projects/Biblioteca_UEA.jpg';
+import sakuraImage from '../assets/imagenes/projects/sakuralab.jpg';
+import saaImage from '../assets/imagenes/projects/saa.jpg';
+import tutoriaImage from '../assets/imagenes/projects/tutoria.jpg';
+
+interface Project {
+	title: string;
+	subtitle: string;
+	description: string;
+	stack: string[];
+	stackTone: 'text-primary-fixed' | 'text-tertiary';
+	imageUrl: ImageMetadata;
+	imageAlt: string;
+	githubUrl: string;
+	demoUrl: string;
+}
+
+const projects: Project[] = [
+	{
+		title: 'TutorIA_Chino',
+		subtitle: 'Tutor virtual para aprendizaje de chino',
+		description:
+			'Aplicación web que integra modelos de IA y bases de datos vectoriales para ofrecer un tutor interactivo en el aprendizaje del idioma chino. Incluye funcionalidades de chat, consultas a la base de datos, uso de FAISS para búsquedas semánticas y despliegue en Vercel. El proyecto busca facilitar el estudio del chino mediante recursos interactivos y personalizados.',
+		stack: ['Python', 'FAISS', 'Vercel', 'TailwindCSS'],
+		stackTone: 'text-primary-fixed',
+		imageUrl: tutoriaImage,
+		imageAlt: 'Portada del proyecto TutorIA_Chino, mostrando una interfaz de chat interactiva para el aprendizaje del idioma chino.',
+		githubUrl: 'https://github.com/DavidParragaMendoza/TutorIA_Chino',
+		demoUrl: 'https://tutor-ia-chino.vercel.app/',
+	},
+	{
+		title: 'Sakura Lab',
+		subtitle: 'Tienda de regalos personalizados',
+		description:
+			'Sakura Lab es una tienda de regalos personalizados que fusiona artesanía y tecnología. Ofrece servicios de impresión 3D, tazas sublimadas y corte láser de alta precisión, transformando conceptos técnicos en realidades tangibles y detalles que florecen. Dirigido por Angela Gonzalez, especialistas en impresión 3D, tazas sublimadas y corte láser en Santa Elena, Ecuador, con envíos a todo el país.',
+		stack: ['Astro', 'TailwindCSS', 'TypeScript', 'CSS', 'JavaScript', 'HTML'],
+		stackTone: 'text-primary-fixed',
+		imageUrl: sakuraImage,
+		imageAlt: 'Portada de Sakura Lab',
+		githubUrl: 'https://github.com/DavidParragaMendoza/SakuraLab',
+		demoUrl: 'https://sakura-lab.vercel.app/',
+	},
+
+	{
+		title: 'S.A.A',
+		subtitle: 'Sistema de Administración de Asistencias',
+		description:
+			'Aplicación web diseñada para gestionar la asistencia de docentes en instituciones educativas. Permite registrar, monitorear y reportar la asistencia del personal docente de forma centralizada, con módulos de gestión de personal, registro de asistencia, reportes estadísticos y panel de administración.',
+		stack: ['PHP', 'MySql', 'Bootstrap', 'CSS', 'JavaScript', 'HTML'],
+		stackTone: 'text-primary-fixed',
+		imageUrl: saaImage,
+		imageAlt: 'Portada de S.A.A',
+		githubUrl: 'https://github.com/DavidParragaMendoza/SAA',
+		demoUrl: 'https://sakura-lab.vercel.app/',
+	},
+
+
+
+	{
+		title: 'Python Para Todos',
+		subtitle: 'Aprende Python desde cero',
+		description:
+			'Aprende Python desde cero con contenido de la Universidad de Michigan.',
+		stack: ['PYTHON', 'Markdow'],
+		stackTone: 'text-primary-fixed',
+		imageUrl: pythonImage,
+		imageAlt: 'Portada del curso Python para todos de la Universidad de Michigan.',
+		githubUrl: 'https://github.com/DavidParragaMendoza/Python-para-todos',
+		demoUrl: 'https://www.notion.so/Programaci-n-para-todos-primeros-pasos-con-Python-2dc01df1c1a080ffa049eda0d3ae1d50?source=copy_link',
+	},
+
+	{
+		title: 'Unidad Educativa Ancón (UEA)',
+		subtitle: 'Plataforma web oficial',
+		description:
+			'Proyecto desarrollado para modernizar la presencia digital de la Unidad Educativa Ancón, ofreciendo información accesible a estudiantes, padres y docentes, además de integrar servicios administrativos para la gestión del personal.',
+		stack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+		stackTone: 'text-tertiary',
+		imageUrl: ueaImage,
+		imageAlt: 'Plataforma web de la Unidad Educativa Ancón con diseño moderno y navegación intuitiva.',
+		githubUrl: "https://github.com/DavidParragaMendoza/ueancon.com",
+		demoUrl: 'https://ueancon.com/',
+	},
+
+	{
+		title: "Biblioteca UEA",
+		subtitle: "Sistema de gestión bibliotecaria",
+		description: "Aplicación web diseñada para la Unidad Educativa Ancón que permite administrar el catálogo de libros, gestionar préstamos y facilitar el acceso a recursos académicos para estudiantes y docentes.",
+		stack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+		stackTone: 'text-primary-fixed',
+		imageUrl: bibliotecaImage,
+		imageAlt: 'Interfaz de la biblioteca digital de la Unidad Educativa Ancón.',
+		githubUrl: "https://github.com/DavidParragaMendoza/biblioteca.ueancon.com",
+		demoUrl: 'http://biblioteca.ueancon.com/',
+	},
+		
+];
+---
+
+<Layout
+	title="Proyectos | David Parraga M."
+	description="Galería técnica de proyectos de software, IA aplicada y arquitectura de sistemas."
+>
+	<Header />
+	<main class="projects-page mx-auto max-w-7xl bg-background px-6 pb-24 pt-32 text-on-surface selection:bg-primary/30 selection:text-primary md:px-12">
+		<header class="mb-16">
+			<div class="mb-4 inline-block rounded-lg border border-outline-variant/10 bg-surface-container-high px-3 py-1">
+				<span class="font-mono text-[10px] uppercase tracking-[0.1em] text-tertiary">Proyectos</span>
+			</div>
+			<h1 class="mb-6 text-5xl font-bold tracking-tighter text-on-surface md:text-7xl">
+				Galería <span class="text-primary">Técnica</span>
+			</h1>
+			
+		</header>
+
+		<section class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{
+				projects.map((project, index) => (
+					<article class="group flex flex-col overflow-hidden rounded-xl bg-surface-container-low shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-12px_rgba(0,31,38,0.4)]">
+						<div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+							<Image
+								src={project.imageUrl}
+								alt={project.imageAlt}
+								width={1280}
+								height={720}
+								sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+								loading={index === 0 ? 'eager' : 'lazy'}
+								fetchpriority={index === 0 ? 'high' : 'low'}
+								decoding="async"
+								class="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-60"></div>
+						</div>
+						<div class="flex grow flex-col p-8">
+							<div class="mb-4 flex flex-wrap gap-2">
+								{
+									project.stack.map((tech) => (
+										<span
+											class:list={[
+												'rounded bg-surface-container-high px-2 py-1 font-mono text-[10px]',
+												project.stackTone,
+											]}
+										>
+											{tech}
+										</span>
+									))
+								}
+							</div>
+							<h2 class="mb-2 text-2xl font-bold text-on-surface transition-colors group-hover:text-primary">
+								{project.title}
+							</h2>
+							<p class="mb-3 text-sm font-medium text-primary">{project.subtitle}</p>
+							<p class="mb-6 grow text-sm leading-relaxed text-on-surface-variant">{project.description}</p>
+							<div class="flex items-center gap-6 border-t border-outline-variant/10 pt-6">
+								<a
+									href={project.githubUrl}
+									class="flex items-center gap-2 text-sm font-medium text-primary transition-all hover:brightness-125"
+									aria-label={`Repositorio de ${project.title}`}
+								>
+									<i class="fas fa-code text-sm" aria-hidden="true"></i>
+									GitHub
+								</a>
+								<a
+									href={project.demoUrl}
+									class="flex items-center gap-2 text-sm font-medium text-primary transition-all hover:brightness-125"
+									aria-label={`Demo de ${project.title}`} target="_blank"
+								>
+									<i class="fas fa-up-right-from-square text-xs" aria-hidden="true"></i>
+									Live Demo
+								</a>
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</section>
+
+		
+	</main>
+	<Footer />
+</Layout>
