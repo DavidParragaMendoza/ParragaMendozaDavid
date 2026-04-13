@@ -18,19 +18,17 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-			rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet"
 		/>
 		<link
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-			rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		rel="stylesheet"
 		/>
 		<script is:inline>
 			const storedTheme = localStorage.getItem('theme');
@@ -40,6 +38,24 @@ const {
 				document.documentElement.classList.add('dark');
 			}
 		</script>
+		
+		<!-- SEO -->
+		<meta name="description" content={description} />
+		<meta name="keywords" content="David Parraga M., Desarrollador Full Stack, IA Aplicada, desarrollo web, programación" />
+		<meta name="author" content="David Parraga M." />
+		<meta name="robots" content="index, follow" />
+		<meta name="image" content="/favicon.png" />
+
+		
+		
+		<!-- Open Graph / Redes Sociales -->
+		<meta property="og:site_name" content="David Parraga M." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="es_EC" />
+		<meta property="og:image" content="https://parragamendozadavid.vercel.app/favicon.png" />
+
 	</head>
 	<body
 		class="bg-background-light font-sans text-slate-900 antialiased transition-colors duration-300 selection:bg-primary selection:text-white dark:bg-background-dark dark:text-slate-200"
